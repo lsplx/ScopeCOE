@@ -5,7 +5,6 @@ import numpy as np
 import random, math
 import os
 import json, tqdm, requests
-import yaml
 from openai import OpenAI
 import os
 import time
@@ -128,8 +127,8 @@ def find_minimal_coverage(data_list):
     return sorted(list(selected_indices))
 
 def main():
-    input_file = '/2WikiMultihopQA/newraw_1000_entity_relation_loopjudge_search_external_judge.json'
-    output_file = '/2WikiMultihopQA/newraw_1000_RQ4_ScopeCOE_GPT35.json'
+    input_file = '/data/2WikiMultihopQA_CoE.json'
+    output_file = '/data/2WikiMultihopQA_CoE_RQ4_ScopeCOE_GPT35.json'
     url = "https://api.openai.com/v1/completions"
     api_key = "XXX"
     data = read_jsonl(input_file)
@@ -137,13 +136,10 @@ def main():
     wrong_num = 0
     for num, each in enumerate(data):
         print(num)
-        knowledge = each["knowledge"]
+        knowledge = each["CoE"]
         question = each['question']
-        search_snippet = each["search_snippet"]
-        answer = each["right_answer"]
-        loop_judge = each["loop_label"]
+        answer = each["answer"]
         external_knowledge = each["external_knowledge"]
-        external_rank = each["external_rank"]
         external_judge = each["external_judge"]
         unrelevant_list = []
         knowledge_sentences = re.split(r'[.!?]+', knowledge)

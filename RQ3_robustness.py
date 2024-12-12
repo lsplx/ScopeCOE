@@ -5,7 +5,6 @@ import numpy as np
 import random, math
 import os
 import json, tqdm, requests
-import yaml
 # from models.models import *
 from openai import OpenAI
 import os
@@ -99,13 +98,11 @@ def getdata_judge(text,url,API_KEY):
 
 
 def main():
-    input_file = '/HotpotQA/merge_knowledge_loop_1000_searchrank_unrevelent_conflict_new.json'
-    output_file = '/HotpotQA/merge_knowledge_loop_1000_RQ3_log_wrongP25_GPT4.json'
-    unlogic_file = '/HotpotQA/merge_knowledge_loop_1000_unlogknowledge_loop.json'
+    input_file = '/data/HotpotQA_CoE.json'
+    output_file = '/data/HotpotQA_CoE_RQ3_log_wrongP25_GPT4.json'
     url = "https://api.openai.com/v1/completions"
     api_key = "XXX"
     data = read_jsonl(input_file)
-    unlogic_file = read_jsonl(unlogic_file)
     correct_num = 0
     wrong_num = 0
     for num, each in enumerate(data):
@@ -113,16 +110,11 @@ def main():
         # if num < 477:
         #     continue
         question = each["question"]
-        knowledge = each["knowledge"]
-        answer = each["right_answer"]
+        knowledge = each["CoE"]
+        answer = each["answer"]
         conflict_knowledge = each["conflict_knowlledge"]
         answer_sentence = ""
         unlog_sentence = ""
-        for eachone in unlogic_file:
-            if eachone["question"] == question:
-                unlog_sentence = eachone["unlogic_knowledge"]
-                # unlog_sentence = eachone["unlogic_knowledge_subtitute"]
-                break
         knowledge_sentences = re.split(r'[.!?]+', knowledge)
         knowledge_sentences = [x for x in knowledge_sentences if x != '']
         knowledge_len = len(knowledge_sentences)

@@ -5,7 +5,6 @@ import numpy as np
 import random, math
 import os
 import json, tqdm, requests
-import yaml
 # from models.models import *
 from openai import OpenAI
 import os
@@ -131,33 +130,21 @@ def getdata_judge(text,url,API_KEY):
 
 
 def main():
-    input_file = '/HotpotQA/merge_knowledge_loop_1000_searchrank_unrevelent_logwrongans.json'
-    output_file = '/HotpotQA/merge_knowledge_loop_1000_RQ2_p50_log_GPT35.json'
-    unlogic_file = "/HotpotQA/merge_knowledge_loop_1000_unlogknowledge_loop.json"
+    input_file = '/data/HotpotQA_CoE.json'
+    output_file = '/data/HotpotQA_CoE_RQ2_p50_log_GPT35.json'
+    # unlogic_file = "/data/merge_knowledge_loop_1000_unlogknowledge_loop.json"
     url = "https://api.openai.com/v1/completions"
     api_key = "XX"
     data = read_jsonl(input_file)
-    unlogic_data = read_jsonl(unlogic_file)
     asr_num = 0
     for num, each in enumerate(data):
         print(num)
-        knowledge = each["knowledge"]
+        knowledge = each["CoE"]
         question = each['question']
-        wrong_ans = each["wrong_answer"]
+        wrong_ans = each["wrong_ans"]
         wrong_knowlledge = each["wrong_knowlledge"]
-        answer = each["right_answer"]
-        loop_judge = each["loop_label"]
-        unrelevent_snippet = each["unrelevent_snippet"]
-        # unlogic_knowledge = ""
-        # for item in unlogic_data:
-        #     if item["question"] == question:
-        #         unlogic_knowledge = item["unlogic_knowledge"]
-        #         break
-        if loop_judge == False:
-            continue
-        # if unlogic_knowledge == "":
-        #     continue
-        #knowledge count rate
+        answer = each["answer"]
+        unrelevent_snippet = each["irrelevant_info"]
         ratio = 0.5
         knowledge_len = len(wrong_knowlledge)
         limit_len = (knowledge_len / ratio) - knowledge_len

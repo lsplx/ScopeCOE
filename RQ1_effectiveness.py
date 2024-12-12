@@ -6,14 +6,10 @@ import random, math
 import os
 import json, tqdm, requests
 from openai import OpenAI
-import yaml
 import os
 import time
 import openai
-import qianfan
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-os.environ["QIANFAN_ACCESS_KEY"] = "XXX"
-os.environ["QIANFAN_SECRET_KEY"] = "XXX"
 def check(question, Reference_answer,Model_response,  url, apikey):
     prompt = '''You are CompareGPT, a machine to verify the correctness of predictions. Answer with only yes/no.
 
@@ -135,34 +131,21 @@ def getdata_judge(text,url,API_KEY):
 
 
 def main():
-    input_file = '/2WikiMultihopQA/newraw_1000_unrevelent_unlog.json'
-    output_file = '/2WikiMultihopQA/newraw_1000_RQ1_p75_unlog_GPT4.json'
-    # unlogic_file = "/HotpotQA/merge_knowledge_loop_1000_unlogknowledge_loop.json"
+    input_file = '/data/2WikiMultihopQA_CoE.json'
+    output_file = '/data/2WikiMultihopQA_CoE_RQ1_p75_unlog_GPT4.json'
     url = "https://api.openai.com/v1/completions"
     api_key = "XXX"
     data = read_jsonl(input_file)
-    # unlogic_data = read_jsonl(unlogic_file)
     correct_num = 0
     wrong_num = 0
     for num, each in enumerate(data):
         print(num)
         knowledge = each["knowledge"]
-        question = each['question']
+        question = each['CoE']
         # sub_unlog_knowledge = each["unlogic_knowledge_subtitute"]
-        unlogic_knowledge = each['unlogic_knowledge']
-        answer = each["right_answer"]
-        loop_judge = each["loop_label"]
-        unrelevent_snippet = each["unrelevent_snippet"]
-        # unlogic_knowledge = ""
-        # sub_unlog_knowledge = ""
-        # for item in unlogic_data:
-        #     if item["question"] == question:
-        #         sub_unlog_knowledge = item["unlogic_knowledge_subtitute"]
-        #         break
-        # if sub_unlog_knowledge == "":
-        #     continue
-        if loop_judge == False:
-            continue
+        unlogic_knowledge = each['Senp_Non_CoE']
+        answer = each["answer"]
+        unrelevent_snippet = each["irrelevant_info"]
         #knowledge count rate
         ratio = 0.75
         knowledge_len = len(unlogic_knowledge)
