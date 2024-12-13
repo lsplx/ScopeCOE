@@ -23,7 +23,9 @@ Each dataset contains the following elements:
 question, answer, CoE, SenP_Non_CoE, WordP_Non_CoE, irrelevant_info, wrong_ans, external_knowledge, external_judge
 
 The example of SenP_Non_CoE and WordP_Non_CoE:
-<img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/incomplete_gen.png" width="50%"/>
+<p align="center">
+  <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/incomplete_gen.png" width="500"/>
+</p>
 
 
 
