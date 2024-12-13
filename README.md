@@ -14,6 +14,11 @@ Evaluation reveals that CoE enhances LLM performance through more accurate answe
 # Environment
 - pip install requirements.txt
 
+# Dataset
+There are two data sets in total, namely 2WikiMultihopQA_CoE.json and HotpotQA_CoE.json.  
+Each dataset contains the following elements:  
+question, answer, CoE, Senp_Non_CoE, Word_Non_CoE, irrelevant_info, wrong_ans, external_knowledge, external_judge
+
 # Running
 
 **RQ1_effectiveness** 
@@ -39,5 +44,6 @@ python RQ3_robustness.py
 ```
 python RQ4_application.py  
 ```
+
 
 
