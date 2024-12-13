@@ -20,7 +20,10 @@ The example of CoE features and CoE:
 # Dataset
 There are two data sets in total, namely 2WikiMultihopQA_CoE.json and HotpotQA_CoE.json.  
 Each dataset contains the following elements:  
-question, answer, CoE, Senp_Non_CoE, Word_Non_CoE, irrelevant_info, wrong_ans, external_knowledge, external_judge
+question, answer, CoE, SenP_Non_CoE, WordP_Non_CoE, irrelevant_info, wrong_ans, external_knowledge, external_judge
+
+The example of SenP_Non_CoE and WordP_Non_CoE:
+
 
 # Running
 
