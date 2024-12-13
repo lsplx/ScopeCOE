@@ -11,6 +11,9 @@ Inspired by forensic science's Chain of Evidence (CoE) theory, we characterize h
 After that, we explore the dominance of CoE in multi-hop QA through three aspects (Effectiveness, Faithfulness, and Robustness) and design a retrieval strategy guided by CoE for knowledge-enhanced frameworks.
 Evaluation reveals that CoE enhances LLM performance through more accurate answer generation, stronger knowledge faithfulness, better robustness against conflicting information, and improved retrieval effectiveness in the knowledge-augmentation scenario.
 
+The example of CoE features and CoE:
+![Image text](https://github.com/lsplx/ScopeCOE/blob/main/fig/CoE_explain_new.png)
+
 # Environment
 - pip install requirements.txt
 
