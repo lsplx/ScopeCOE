@@ -9,7 +9,8 @@ Yet these studies lack clear characterization of preferred knowledge features an
 In this paper, we characterize LLMs' preferred knowledge under imperfect contexts and explore the dominance of such knowledge in handling complex scenarios.
 Inspired by forensic science's Chain of Evidence (CoE) theory, we characterize how evidence pieces form logical chains in external knowledge and propose an automated CoE discrimination approach to identify CoE from external knowledge.
 After that, we explore the dominance of CoE in multi-hop QA through three aspects (Effectiveness, Faithfulness, and Robustness) and design a retrieval strategy guided by CoE for knowledge-enhanced frameworks.
-Evaluation reveals that CoE enhances LLM performance through more accurate answer generation, stronger knowledge faithfulness, better robustness against conflicting information, and improved retrieval effectiveness in the knowledge-augmentation scenario.
+Accordingly, we propose an automated CoE discrimination approach and evaluate LLMs' effectiveness, faithfulness and robustness with CoE, including its application in the Retrieval-Augmented Generation (RAG). 
+Tests on five LLMs show CoE improves generation accuracy, answer faithfulness, robustness to knowledge conflicts, and boosts the performance of existing approaches in three practical RAG scenarios.
 
 The example of CoE features and CoE:
 <p align="center">
