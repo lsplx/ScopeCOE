@@ -1,4 +1,4 @@
-# ScopeCOE
+# What External Knowledge is Preferred by LLMs? Characterizing and Exploring Chain of Evidence in Imperfect Context
 This repository contains the source code for the paper What Knowledge Dominates? Characterizing and Exploring Chain of Evidence in Imperfect External Knowledge
 
 # Overview
