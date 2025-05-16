@@ -14,7 +14,7 @@ Tests on five LLMs show CoE improves generation accuracy, answer faithfulness, r
 
 The example of CoE features and CoE:
 <p align="center">
-  <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/CoE_explain_new.png" width="700"/>
+  <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/CoE_inference.png" width="700"/>
 </p>
 
 # Environment
