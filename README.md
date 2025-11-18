@@ -30,6 +30,16 @@ The example of SenP_Non_CoE and WordP_Non_CoE:
   <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/incomplete_gen.png" width="500"/>
 </p>
 
+# Prompts
+The prompt for relation extraction:
+<p align="center">
+  <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/relation_extraction_prompt.png" width="500"/>
+</p>
+
+The prompt for intent and evidence node extraction:
+<p align="center">
+  <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/relation_extraction_prompt.png" width="500"/>
+</p>
 
 
 # Running
