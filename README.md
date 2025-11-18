@@ -38,7 +38,7 @@ The prompt for relation extraction:
 
 The prompt for intent and evidence node extraction:
 <p align="center">
-  <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/relation_extraction_prompt.png" width="500"/>
+  <img src="https://github.com/lsplx/ScopeCOE/blob/main/fig/intent_node_extraction_prompt.png" width="500"/>
 </p>
 
 
