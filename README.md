@@ -1,4 +1,4 @@
-# What External Knowledge is Preferred by LLMs? Characterizing and Exploring Chain of Evidence in Imperfect Context
+# What External Knowledge is Preferred by Large Language Models: A Study on Chain of Evidence Knowledge
 This repository contains the source code for the paper What External Knowledge is Preferred by Large Language Models: A Study on Chain of Evidence Knowledge
 
 # Overview
